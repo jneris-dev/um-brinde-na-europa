@@ -3,18 +3,20 @@ import { InputHTMLAttributes } from "react";
 interface ButtonProps {
     link: string;
     label: string;
+    navigate(value: string): void;
 }
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     type: string;
-    value: string;
+    value?: string;
     id: string;
     label?: string;
     placeholder: string;
     alert?: string;
     only: boolean;
     options?: string[];
-    setValue(value: string): void;
+    setValue?(value: string): void;
+    data?: Data;
 }
 
 interface Data {

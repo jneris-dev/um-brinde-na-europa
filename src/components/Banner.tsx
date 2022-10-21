@@ -3,7 +3,11 @@ import peoplesCloud from '../assets/Clouds.png'
 
 import { Button } from './Button';
 
-export function Banner() {
+interface Props {
+    outlet: (value: string) => void;
+}
+
+export function Banner(props: Props) {
     return (
         <section className="w-full min-h-screen flex lg:flex-row flex-col gap-8 items-center justify-center pt-24 bg-cover bg-no-repeat bg-hero-clouds px-8">
             <div className="flex flex-col items-center justify-center">
@@ -15,11 +19,13 @@ export function Banner() {
                 <div className="flex flex-row flex-wrap gap-5 mt-10 justify-center">
                     <Button
                         link={`/login`}
-                        label="Login"
+                        label="login"
+                        navigate={props.outlet}
                     />
                     <Button
                         link={`/cadastro`}
-                        label="Cadastre-se"
+                        label="cadastre-se"
+                        navigate={props.outlet}
                     />
                 </div>
             </div>

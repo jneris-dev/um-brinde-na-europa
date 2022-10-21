@@ -1,8 +1,8 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "api.teste-frontend.ateliedepropaganda.com.br/v1",
+    baseURL: "https://api.teste-frontend.ateliedepropaganda.com.br/v1",
     headers: {
-        "Content-type": "application/json"
+        'Content-Type': 'multipart/form-data'
     }
 });
