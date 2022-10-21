@@ -41,10 +41,10 @@ export function Input(props: InputProps) {
                         placeholder={props.placeholder}
                         required={props.required}
                         className={`text-white border-t-0 pl-0 border-l-0 border-r-0 border-b-2 bg-transparent w-full placeholder:text-white
-                        focus:outline-none focus:border-b-main-500 focus:ring-0 ${validate ? 'border-red-500' : 'border-white'}`}
+                        focus:outline-none focus:border-b-main-500 focus:ring-0 ${validate ? 'border-red-500' : 'border-white'} ${props.type === 'password' && 'pr-9'}`}
                     />
                     {props.type === 'password' &&
-                        <div className="absolute right-2 top-2 z-10" onClick={() => setShowPass(!showPass)}>
+                        <div className="absolute right-0 top-0 z-10 h-[42px] px-2 flex items-center" onClick={() => setShowPass(!showPass)}>
                             {!showPass ?
                                 <Eye size={20} weight="regular" className="text-white cursor-pointer" />
                                 :

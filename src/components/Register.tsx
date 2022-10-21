@@ -33,13 +33,10 @@ export function Register() {
 
         DataService.create(data).then((response) => {
             console.log(response.data);
-
             setShowPopUp(true)
         }).catch((err) => {
             console.log(err);
         });
-
-        console.log(data)
     }
 
     return (
