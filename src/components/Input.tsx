@@ -21,7 +21,7 @@ export function Input(props: InputProps) {
             /\S+@\S+\.\S+/.test(value) ? setValidate(false) : setValidate(true);
 
         if (props.id === 'confirm-senha')
-            props.data.password !== value ? setValidate(true) : setValidate(false);
+            props.data?.password !== value ? setValidate(true) : setValidate(false);
     }
 
     return (
