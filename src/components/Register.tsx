@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react";
+import { CircleNotch } from "phosphor-react";
 import PasswordStrengthBar from 'react-password-strength-bar';
 
 import DataService from '../services/service';
@@ -15,7 +16,9 @@ export function Register() {
     const [empresa, setEmpresa] = useState('');
     const [classificacao, setClassificacao] = useState('');
 
-    const areAllFieldsFilled = (nome != "") && (cpf != "") && (email != "") && (senha != "") && (confirmSenha != "") && (empresa != "") && (classificacao != "");
+    const [loading, setLoading] = useState(false);
+    const [strongPassword, setStrongPassword] = useState(false);
+    const areAllFieldsFilled = (nome != "") && (cpf != "") && (email != "") && (senha != "") && (confirmSenha != "") && (empresa != "") && (classificacao != "") && strongPassword;
     const [showPopUp, setShowPopUp] = useState(false);
 
     const data = {
@@ -30,12 +33,15 @@ export function Register() {
 
     function handleSubmit(event: FormEvent) {
         event.preventDefault();
+        setLoading(true)
 
         DataService.create(data).then((response) => {
             console.log(response.data);
             setShowPopUp(true)
+            setLoading(false)
         }).catch((err) => {
             console.log(err);
+            setLoading(false)
         });
     }
 
@@ -101,10 +107,17 @@ export function Register() {
                                 placeholder="Digite sua Senha"
                                 only={false}
                                 data={data}
+                                alert="A senha não corresponde"
                             />
                             <PasswordStrengthBar
                                 password={senha}
                                 scoreWordClassName="!text-white"
+                                minLength={3}
+                                scoreWords={
+                                    ['fraco', 'fraco', 'ok', 'bom', 'forte']
+                                }
+                                shortScoreWord={''}
+                                onChangeScore={(score, feedback) => { score >= 2 ? setStrongPassword(true) : setStrongPassword(false) }}
                             />
                         </div>
                         <div className="flex-1 relative">
@@ -154,8 +167,9 @@ export function Register() {
                         <button
                             type="submit"
                             disabled={!areAllFieldsFilled}
-                            className={`w-44 h-12 flex items-center justify-center uppercase font-black bg-main-500 text-white rounded transition-all hover:bg-main-600 hover:ring-2 ring-offset-2 ring-offset-[#774c33] hover:ring-main-600 focus:outline-none focus:ring-main-500 focus:ring-2 ${!areAllFieldsFilled && 'cursor-not-allowed opacity-60'}`}
+                            className={`w-44 h-12 flex items-center justify-center gap-1 uppercase font-black bg-main-500 text-white rounded transition-all hover:bg-main-600 hover:ring-2 ring-offset-2 ring-offset-[#774c33] hover:ring-main-600 focus:outline-none focus:ring-main-500 focus:ring-2 ${!areAllFieldsFilled && 'cursor-not-allowed opacity-60'}`}
                         >
+                            {loading && <CircleNotch size={22} weight="bold" className="animate-spin" />}
                             Enviar
                         </button>
                     </div>

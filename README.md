@@ -7,7 +7,7 @@
 Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 - [React](https://reactjs.org)
-- [TypeScript](https://www.typescriptlang.org/)
+- [Typescript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
 
 ## 📚 Bibliotecas adicionais
@@ -34,7 +34,7 @@ $ git clone https://github.com/jneris-dev/um-brinde-na-europa.git
 $ cd um-brinde-na-europa
 ```
 
-Follow the steps below:
+Siga os passos abaixo:
 ```bash
 # Instale as dependências
 $ npm install
@@ -43,6 +43,14 @@ $ npm install
 $ npm run dev
 ```
 O aplicativo estará disponível para acesso em seu navegador em http://localhost:3000
+
+## 🔑 Variáveis ​​ambientais
+
+Para executar este projeto, altere o nome do arquivo [**.env.example**](.env.example) para **.env.local**.
+
+`VITE_API`
+
+Não possuí API do projeto, [entre em contato](mailto:contato@jneris.com.br?subject=[GitHub]%20API%20-%20Um%20Brinde%20na%20Europa) e solicite a sua!
 
 ---
 

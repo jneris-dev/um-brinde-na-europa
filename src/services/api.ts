@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-    baseURL: "https://api.teste-frontend.ateliedepropaganda.com.br/v1",
+    baseURL: import.meta.env.VITE_API,
     headers: {
         'Content-Type': 'multipart/form-data'
     }

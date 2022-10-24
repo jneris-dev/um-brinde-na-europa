@@ -34,6 +34,7 @@ export function Input(props: InputProps) {
                     <input
                         ref={inputRef}
                         id={props.id}
+                        name={props.id}
                         type={!showPass ? props.type : 'text'}
                         value={props.id === 'cpf' ? cpf.format(props.value) : props.value}
                         onChange={event => props.setValue(event.target.value)}
