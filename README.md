@@ -21,7 +21,7 @@ Este projeto foi desenvolvido utilizando as seguintes tecnologias:
 
 ## 🔥 Visualizar
 
-A maneira mais fácil de implantar seu aplicativo é usar [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+A maneira mais fácil de implantar seu aplicativo é usar [Plataforma Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
 
 [<img alt="Um Brinde na Europa - JNeris" title="Um Brinde na Europa - JNeris" src=".github/deploy.svg" />](https://um-brinde-na-europa.vercel.app/)
 
@@ -44,7 +44,7 @@ $ npm run dev
 ```
 O aplicativo estará disponível para acesso em seu navegador em http://localhost:3000
 
-## 🔑 Variáveis ​​ambientais
+## 🔑 Variáveis ambiente
 
 Para executar este projeto, altere o nome do arquivo [**.env.example**](.env.example) para **.env.local**.
 
